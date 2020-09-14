@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 
@@ -42,7 +43,9 @@ fun NewsStory() {
             Spacer(modifier = Modifier.preferredHeight(16.dp))
             Text(
                 "A day in rainy water",
-                style = typography.h6
+                style = typography.h6,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
             )
             Text(
                 "Paris, France",
