@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -35,9 +35,9 @@ fun NewsStory() {
             Image(
                 image,
                 modifier = Modifier
-                    .preferredHeight(180.dp)
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(16.dp)),
+                    .height(200.dp)
+                    .width(200.dp)
+                    .clip(CircleShape),
                 contentScale = ContentScale.Crop
             )
             Spacer(modifier = Modifier.preferredHeight(16.dp))
