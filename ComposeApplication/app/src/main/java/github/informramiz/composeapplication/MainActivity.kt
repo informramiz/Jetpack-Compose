@@ -4,12 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.res.imageResource
@@ -31,29 +34,34 @@ fun NewsStory() {
     val image = imageResource(R.drawable.header)
     MaterialTheme {
         val typography = MaterialTheme.typography
-        Column(modifier = Modifier.padding(16.dp)) {
+        Column(modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+                .background(color = Color.White), horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Spacer(modifier = Modifier.preferredHeight(16.dp))
             Image(
-                image,
-                modifier = Modifier
-                    .height(200.dp)
-                    .width(200.dp)
-                    .clip(CircleShape),
-                contentScale = ContentScale.Crop
+                    image,
+                    modifier = Modifier
+                            .height(200.dp)
+                            .width(200.dp)
+                            .clip(CircleShape),
+                    contentScale = ContentScale.Crop
             )
             Spacer(modifier = Modifier.preferredHeight(16.dp))
             Text(
-                "A day in rainy water",
-                style = typography.h6,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis
+                    "A day in rainy water",
+                    style = typography.h6,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis
             )
             Text(
-                "Paris, France",
-                style = typography.body1
+                    "Paris, France",
+                    style = typography.body1
             )
             Text(
-                "September 2020",
-                style = typography.body2
+                    "September 2020",
+                    style = typography.body2
             )
         }
     }
